@@ -1,0 +1,237 @@
+ObjectId,Country,2023
+1,"Afghanistan, Islamic Rep. of",1.956
+2,Africa,1.485
+3,Albania,2.122
+4,Algeria,2.274
+5,American Samoa,0.951
+6,Americas,1.772
+7,"Andorra, Principality of",2.786
+8,Angola,1.175
+9,Anguilla,1.116
+10,Antarctica,0.48
+11,Antigua and Barbuda,1.116
+12,Argentina,1.519
+13,"Armenia, Rep. of",2.258
+14,"Aruba, Kingdom of the Netherlands",
+15,Asia,1.778
+16,Australia,0.86
+17,Austria,2.572
+18,"Azerbaijan, Rep. of",2.16
+19,"Bahamas, The",1.688
+20,"Bahrain, Kingdom of",2.261
+21,Bangladesh,1.639
+22,Barbados,
+23,"Belarus, Rep. of",2.713
+24,Belgium,2.409
+25,Belize,1.813
+26,Benin,1.466
+27,Bhutan,1.751
+28,Bolivia,2.202
+29,Bosnia and Herzegovina,2.551
+30,Botswana,0.731
+31,Brazil,1.648
+32,British Virgin Islands,
+33,Brunei Darussalam,1.145
+34,Bulgaria,2.614
+35,Burkina Faso,1.556
+36,Burundi,
+37,Cabo Verde,2.165
+38,Cambodia,1.256
+39,Cameroon,1.088
+40,Canada,2.368
+41,Cayman Islands,1.757
+42,Central African Rep.,1.018
+43,Chad,1.382
+44,Chile,0.846
+45,"China, P.R.: Hong Kong",1.419
+46,"China, P.R.: Macao",1.419
+47,"China, P.R.: Mainland",1.843
+48,Colombia,1.265
+49,"Comoros, Union of the",1.33
+50,"Congo, Dem. Rep. of the",1.331
+51,"Congo, Rep. of",1.369
+52,Cook Islands,0.255
+53,Costa Rica,
+54,Côte d'Ivoire,1.821
+55,"Croatia, Rep. of",2.584
+56,Cuba,1.942
+57,Cyprus,1.866
+58,Czech Rep.,2.478
+59,Denmark,1.882
+60,Djibouti,0.645
+61,Dominica,1.116
+62,Dominican Rep.,1.544
+63,Ecuador,1.558
+64,"Egypt, Arab Rep. of",2.011
+65,El Salvador,1.646
+66,"Equatorial Guinea, Rep. of",1.005
+67,"Eritrea, The State of",
+68,"Estonia, Rep. of",2.175
+69,"Eswatini, Kingdom of",0.746
+70,"Ethiopia, The Federal Dem. Rep. of",1.198
+71,Europe,2.435
+72,Falkland Islands (Malvinas),
+73,Faroe Islands,0.63
+74,"Fiji, Rep. of",0.769
+75,Finland,1.888
+76,France,2.591
+77,French Polynesia,1.001
+78,Gabon,1.238
+79,"Gambia, The",1.81
+80,Georgia,2.107
+81,Germany,2.442
+82,Ghana,1.515
+83,Gibraltar,2.604
+84,Greece,1.841
+85,Greenland,1.192
+86,Grenada,1.156
+87,Guadeloupe,1.116
+88,Guatemala,1.591
+89,"Guiana, French",1.663
+90,Guinea,1.776
+91,Guinea-Bissau,1.78
+92,Guyana,1.508
+93,Haiti,1.659
+94,Holy See,2.177
+95,Honduras,1.734
+96,Hungary,2.528
+97,Iceland,0.449
+98,India,0.894
+99,Indonesia,1.084
+100,"Iran, Islamic Rep. of",2.238
+101,Iraq,2.064
+102,Ireland,1.611
+103,Isle of Man,1.546
+104,Israel,2.08
+105,Italy,2.274
+106,Jamaica,1.827
+107,Japan,1.847
+108,Jordan,2.007
+109,"Kazakhstan, Rep. of",2.583
+110,Kenya,1.396
+111,Kiribati,
+112,"Korea, Dem. People's Rep. of",2.034
+113,"Korea, Rep. of",1.648
+114,Kuwait,1.995
+115,Kyrgyz Rep.,1.962
+116,Lao People's Dem. Rep.,1.488
+117,Latvia,2.33
+118,Lebanon,2.073
+119,"Lesotho, Kingdom of",0.726
+120,Liberia,1.448
+121,Libya,1.473
+122,Liechtenstein,2.582
+123,Lithuania,2.488
+124,Luxembourg,2.561
+125,"Madagascar, Rep. of",1.275
+126,Malawi,1.198
+127,Malaysia,1.135
+128,Maldives,0.842
+129,Mali,1.716
+130,Malta,2.068
+131,"Marshall Islands, Rep. of the",0.508
+132,Martinique,1.101
+133,"Mauritania, Islamic Rep. of",2.033
+134,Mauritius,1.685
+135,Mayotte,1.101
+136,Mexico,1.683
+137,"Micronesia, Federated States of",0.731
+138,"Moldova, Rep. of",2.903
+139,Monaco,2.429
+140,Mongolia,2.215
+141,Montenegro,2.425
+142,Montserrat,1.116
+143,Morocco,2.556
+144,"Mozambique, Rep. of",0.956
+145,Myanmar,1.723
+146,Namibia,0.951
+147,"Nauru, Rep. of",
+148,Nepal,1.256
+149,"Netherlands, The",2.328
+150,New Caledonia,1.102
+151,New Zealand,1.132
+152,Nicaragua,1.731
+153,Niger,1.672
+154,Nigeria,1.419
+155,Niue,
+156,Norfolk Island,0.654
+157,"North Macedonia, Republic of ",2.239
+158,Norway,1.219
+159,Oceania,0.872
+160,Oman,1.377
+161,Pakistan,1.356
+162,"Palau, Rep. of",1.834
+163,Panama,1.077
+164,Papua New Guinea,0.905
+165,Paraguay,2.033
+166,Peru,1.696
+167,Philippines,1.508
+168,Pitcairn Islands,
+169,"Poland, Rep. of",2.484
+170,Portugal,2.556
+171,Puerto Rico,1.255
+172,Qatar,2.074
+173,Réunion,1.587
+174,Romania,2.623
+175,Russian Federation,2.526
+176,Rwanda,
+177,Saint Helena,1.516
+178,Saint Pierre and Miquelon,1.494
+179,Samoa,0.87
+180,"San Marino, Rep. of",2.406
+181,"São Tomé and Príncipe, Dem. Rep. of",1.252
+182,Saudi Arabia,1.839
+183,Senegal,2.065
+184,"Serbia, Rep. of",2.535
+185,Seychelles,0.902
+186,Sierra Leone,1.112
+187,Singapore,1.794
+188,Slovak Rep.,2.402
+189,"Slovenia, Rep. of",2.617
+190,Solomon Islands,0.913
+191,Somalia,1.379
+192,South Africa,1.121
+193,"South Sudan, Rep. of",1.351
+194,Spain,2.574
+195,Sri Lanka,1.101
+196,St. Kitts and Nevis,1.116
+197,St. Lucia,1.111
+198,St. Vincent and the Grenadines,1.156
+199,Sudan,1.615
+200,Suriname,1.524
+201,Svalbard Jan Mayen Islands,3.578
+202,Sweden,1.478
+203,Switzerland,2.742
+204,Syrian Arab Rep.,2.092
+205,Taiwan Province of China,1.318
+206,"Tajikistan, Rep. of",1.712
+207,"Tanzania, United Rep. of",1.248
+208,Thailand,1.447
+209,"Timor-Leste, Dem. Rep. of",0.215
+210,Togo,1.451
+211,Tokelau,
+212,Tonga,0.853
+213,Trinidad and Tobago,1.185
+214,Tunisia,2.403
+215,"Türkiye, Rep. of",2.061
+216,Turkmenistan,2.384
+217,Turks and Caicos Islands,
+218,Tuvalu,1.177
+219,Uganda,1.393
+220,Ukraine,2.791
+221,United Arab Emirates,1.759
+222,United Kingdom,1.482
+223,United States,1.212
+224,United States Virgin Islands,1.231
+225,Uruguay,1.526
+231,"Uzbekistan, Rep. of",2.333
+232,Vanuatu,0.885
+233,"Venezuela, Rep. Bolivariana de",1.176
+234,Vietnam,1.333
+235,Wallis and Futuna Islands,0.854
+236,West Bank and Gaza,2.093
+237,Western Sahara,2.017
+238,World,1.767
+239,"Yemen, Rep. of",
+240,Zambia,1.268
+241,Zimbabwe,0.612
