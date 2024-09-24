@@ -1,30 +1,93 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 300,
+    "title": "Climate Change Level in Each Country in 2023 (Visualised in 6 categories)",
+    "width": 800,
+    "height": 400,
     "data": {
-      "url": "https://opendata.arcgis.com/datasets/686603e943f948acaa13fb5d2b0f1275_3.geojson",
-      "format": {"property": "features"}
+      "url": "https://raw.githubusercontent.com/elim0050/3179/refs/heads/main/choroplath_map.json",
+      "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
     },
-    "transform": [
+    "projection": {"type": "equalEarth"},
+    "layer": [
       {
-        "filter": {
-          "field": "properties.lad16nm",
-          "oneOf": [
-            "Bolton",
-            "Bury",
-            "Manchester",
-            "Oldham",
-            "Rochdale",
-            "Salford",
-            "Stockport",
-            "Tameside",
-            "Trafford",
-            "Wigan"
+        "transform": [
+          {
+            "calculate": "'Data is not available in ' + datum.properties.NAME",
+            "as": "note"
+          }
+        ],
+        "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "white"},
+        "encoding": {"tooltip": {"field": "note"}}
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/elim0050/3179/refs/heads/main/ocean_map.json",
+          "format": {"type": "topojson", "feature": "oceans"}
+        },
+        "mark": {"type": "geoshape", "fill": "skyblue"}
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/elim0050/3179/refs/heads/main/choroplath_map.json",
+          "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+        },
+        "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
+      },
+      {
+        "transform": [
+          {
+            "lookup": "properties.NAME",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/elim0050/3179/refs/heads/main/Climate_datasets.csv"
+              },
+              "key": "Country",
+              "fields": ["2023"]
+            }
+          },
+          {
+            "calculate": "datum['2023'] === null ? 'No Data' : datum['2023']",
+            "as": "Climate_Status"
+          }
+        ],
+        "mark": {"type": "geoshape", "stroke": "white"},
+        "encoding": {
+          "color": {
+            "field": "Climate_Status",
+            "scale": {
+              "domain": [
+                "Very Low",
+                "Low",
+                "Lower-Middle",
+                "Middle",
+                "Upper-Middle",
+                "High"
+              ],
+              "range": [
+                "#98FB98",
+                "#90EE90",
+                "#3CB371",
+                "#2E8B57",
+                "#228B22",
+                "#006400"
+              ]
+            },
+            "title": "Climate Change Level"
+          },
+          "tooltip": [
+            {
+              "field": "properties.NAME",
+              "type": "nominal",
+              "title": "Country Name"
+            },
+            {
+              "field": "Climate_Status",
+              "type": "nominal",
+              "title": "Climate Change Level"
+            }
           ]
         }
       }
     ],
-    "projection": {"type": "mercator"},
-    "mark": "geoshape"
+    "config": {}
   }
