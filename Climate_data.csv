@@ -72,7 +72,7 @@ ObjectId,Country,2023
 71,Europe,Upper-Middle
 72,Falkland Islands (Malvinas),
 73,Faroe Islands,Low
-74,"Fiji, Rep. of",Low
+74,Fiji,Low
 75,Finland,Middle
 76,France,High
 77,French Polynesia,Lower-Middle
@@ -204,10 +204,10 @@ ObjectId,Country,2023
 203,Switzerland,High
 204,Syrian Arab Rep.,Upper-Middle
 205,Taiwan Province of China,Lower-Middle
-206,"Tajikistan, Rep. of",Middle
+206,Tajikistan,Middle
 207,"Tanzania, United Rep. of",Lower-Middle
 208,Thailand,Lower-Middle
-209,"Timor-Leste, Dem. Rep. of",Very Low
+209,Timor-Leste,Very Low
 210,Togo,Lower-Middle
 211,Tokelau,
 212,Tonga,Low
@@ -221,7 +221,7 @@ ObjectId,Country,2023
 220,Ukraine,High
 221,United Arab Emirates,Middle
 222,United Kingdom,Lower-Middle
-223,United States,Lower-Middle
+223,United States of American,Lower-Middle
 224,United States Virgin Islands,Lower-Middle
 225,Uruguay,Middle
 231,Uzbekistan,Upper-Middle
@@ -231,7 +231,6 @@ ObjectId,Country,2023
 235,Wallis and Futuna Islands,Low
 236,West Bank and Gaza,Upper-Middle
 237,Western Sahara,Upper-Middle
-238,World,Middle
-239,"Yemen, Rep. of",
+239,Yemen,
 240,Zambia,Lower-Middle
 241,Zimbabwe,Low
