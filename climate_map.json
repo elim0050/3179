@@ -1,26 +1,18 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Climate Zone In Australia",
+    "title": "Climate Zone in Australia",
     "width": 800,
-    "height": 400,
-    "data": {
-        "url": "https://raw.githubusercontent.com/elim0050/3179/refs/heads/main/zone_map.json",
-        "format": {
-            "type": "topojson",
-            "feature": "Zone 8"
-        }
-    },
+    "height": 600,
     "projection": {
         "type": "equalEarth"
     },
     "layer": [
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/elim0050/3179/refs/heads/main/zone_map.json",
-
+                "url": "https://raw.githubusercontent.com/elim0050/3179/refs/heads/main/Climate%20zones%20AU.json",
                 "format": {
                     "type": "topojson",
-                    "feature": "Zone 8"
+                    "feature": "Climate zones AU" 
                 }
             },
             "mark": {
@@ -29,6 +21,5 @@
                 "stroke": "white"
             }
         }
-]
-
+    ]
 }
