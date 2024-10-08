@@ -1,21 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "A ranged dot plot showing the minimum and maximum temperatures for each month, filtered by location.",
-  "title": {
-    "text": "Capital Cities Minimum and Maximum Temperature",
-    "font": "Verdana", 
-    "color": "white", 
-    "fontSize": 20, 
-    "anchor": "middle", 
-    "fontWeight": "bold" 
-  },
-  "width": 400,
-  "height": 400,
-  "background": "#4a4b4d",  
-
-  "data": {
-    "url": "datasets/aus_min_max_temp.csv"
-  },
   "params": [
     {
       "name": "State_selection",
@@ -54,6 +39,22 @@
       }
     }
   ],
+  "title": {
+    "text": "Capital Cities Minimum and Maximum Temperature",
+    "font": "Verdana", 
+    "color": "white", 
+    "fontSize": 20, 
+    "anchor": "middle", 
+    "fontWeight": "bold" 
+  },
+  "width": 400,
+  "height": 400,
+  "background": "#4a4b4d",  
+
+  "data": {
+    "url": "datasets/aus_min_max_temp.csv"
+  },
+
   "transform": [
     {
       "fold": [

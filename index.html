@@ -15,7 +15,7 @@ h1 {
 	text-align: center; /* Center the titles */
 	color: rgb(255, 255, 255); /* Set title color */
   }
-#aus_zone_map, #aus_min_max_temp {
+#aus_zone_map, #combined_chart {
 	margin: 20px; /* Add some spacing around the visualizations */
   }
     
@@ -29,17 +29,18 @@ h1 {
   
   <div id="aus_zone_map"></div>
   
-  <div id="aus_min_max_temp"></div>
+  <div id="combined_chart"></div>
+
 
   <script type="text/javascript">
     var aus_zone_map = "aus_zone_1.json";
-    var aus_min_max_temp = "aus_min_max_temp.json";
+    var combined_chart = "combined_chart.json";
 
     vegaEmbed('#aus_zone_map', aus_zone_map).then(function(result) {
       // Visualization successfully rendered
     }).catch(console.error);
 
-    vegaEmbed('#aus_min_max_temp', aus_min_max_temp).then(function(result) {
+    vegaEmbed('#combined_chart', combined_chart).then(function(result) {
       // Visualization successfully rendered
     }).catch(console.error);
   </script>
