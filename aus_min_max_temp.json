@@ -1,0 +1,216 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A ranged dot plot showing the minimum and maximum temperatures for each month, filtered by location.",
+  "title": {
+    "text": "Capital Cities Minimum and Maximum Temperature",
+    "font": "Verdana", 
+    "color": "white", 
+    "fontSize": 20, 
+    "anchor": "middle", 
+    "fontWeight": "bold" 
+  },
+  "width": 400,
+  "height": 400,
+  "background": "#4a4b4d",  
+
+  "data": {
+    "url": "datasets/aus_min_max_temp.csv"
+  },
+  "params": [
+    {
+      "name": "State_selection",
+      "value": "Adelaide",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Adelaide",
+          "Alice Springs",
+          "Brisbane",
+          "Canberra",
+          "Darwin",
+          "Hobart",
+          "Melbourne",
+          "Perth",
+          "Broome",
+          "Sydney",
+          "Townsville",
+          "Cairns"
+        ],
+        "labels": [
+          "Adelaide",
+          "Alice Springs",
+          "Brisbane",
+          "Canberra",
+          "Darwin",
+          "Hobart",
+          "Melbourne",
+          "Perth",
+          "Broome",
+          "Sydney",
+          "Townsville",
+          "Cairns"
+        ],
+        "name": "State Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "fold": [
+        "JAN",
+        "FEB",
+        "MAR",
+        "APR",
+        "MAY",
+        "JUN",
+        "JUL",
+        "AUG",
+        "SEP",
+        "OCT",
+        "NOV",
+        "DEC"
+      ],
+      "as": [
+        "Month",
+        "MonthVAl"
+      ]
+    },
+    {
+      "filter": {
+        "field": "TYPE",
+        "oneOf": [
+          "min",
+          "max"
+        ]
+      }
+    },
+    {
+      "filter": "datum.LOCATION == State_selection"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Month",
+      "type": "nominal",
+      "sort": [
+        "JAN",
+        "FEB",
+        "MAR",
+        "APR",
+        "MAY",
+        "JUN",
+        "JUL",
+        "AUG",
+        "SEP",
+        "OCT",
+        "NOV",
+        "DEC"
+      ],
+      "axis": {
+        "offset": 5,
+        "ticks": true,
+        "minExtent": 70,
+        "domain": true,
+        "domainColor": "white",
+        "tickColor": "white",
+        "labelColor": "white" , 
+        "titleColor": "white" 
+      }
+    },
+    "y": {
+      "field": "MonthVAl",
+      "type": "quantitative",
+      "title": "Temperature values ",
+      "axis": {
+        "domain": true,
+        "domainColor": "white",
+        "ticks": true,
+        "tickColor": "white",
+        "labelColor": "white" , 
+        "titleColor": "white" 
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": "line",
+      "encoding": {
+        "detail": {
+          "field": "Month",
+          "type": "nominal"
+        },
+        "color": {
+          "value": "#db646f"
+        }
+      }
+    },
+    {
+      "selection": {
+        "type_highlight": {
+          "type": "multi",
+          "fields": ["TYPE"],
+          "bind": "legend"
+        }
+      },
+      "mark": {
+        "type": "point",
+        "filled": true
+      },
+      "encoding": {
+        "color": {
+          "field": "TYPE",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              "min",
+              "max"
+            ],
+            "range": [
+              "#e6959c",
+              "#911a24"
+            ]
+          },
+          "title": "type", 
+          "legend": {
+            "labelFont": "Monaco", 
+            "labelFontSize": 12, 
+            "labelColor": "white", 
+            "titleFont": "Monaco", 
+            "titleFontSize": 14, 
+            "titleColor": "white",
+            "orient": "left", 
+            "padding": 10 , 
+            "labelLimit": 500
+          }
+        },
+        "size": {
+          "value": 100
+        },
+        "opacity": {
+          "condition": {
+            "selection": "type_highlight",
+            "value": 1
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {
+            "field": "Month",
+            "type": "nominal",
+            "title": "Month"
+          },
+          {
+            "field": "MonthVAl",
+            "type": "quantitative",
+            "title": "Temperature"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "legend": {
+      "labelColor": "white" 
+    }
+  }
+}

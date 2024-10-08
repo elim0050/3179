@@ -1,8 +1,12 @@
-#ChoroplethMap {
-	top:100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	/*height: 1000px;
-	width: 800px;*/
-}
+
+body {
+	background-color: ""#4a4b4d""; /* Set the background color */
+	font-family: Arial, sans-serif; /* Set a default font */
+  }
+h1 {
+	text-align: center; /* Center the titles */
+	color: rgb(255, 255, 255); /* Set title color */
+  }
+#aus_zone_map, #aus_min_max_temp {
+	margin: 20px; /* Add some spacing around the visualizations */
+  }

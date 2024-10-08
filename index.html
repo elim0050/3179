@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
   
-  
   <!-- CSS file -->
-  <link rel="stylesheet" type="css" href="style.css" media="all">
+  <link rel="stylesheet" type="text/css" media="all">
+  <style>
+
+
+h1 {
+	text-align: center; /* Center the titles */
+	color: rgb(255, 255, 255); /* Set title color */
+  }
+#aus_zone_map, #aus_min_max_temp {
+	margin: 20px; /* Add some spacing around the visualizations */
+  }
+    
+
+  </style>
+
   
 </head>
-<body>
+<body style="background-color:#4a4b4d;">
+  <h1>Australia Climate </h1>
   
-<div id="ChoroplethMap"></div>
+  <div id="aus_zone_map"></div>
+  
+  <div id="aus_min_max_temp"></div>
 
-<script type="text/javascript">
+  <script type="text/javascript">
+    var aus_zone_map = "aus_zone_1.json";
+    var aus_min_max_temp = "aus_min_max_temp.json";
 
-  var spec2 = "climate_map.json";
-  vegaEmbed('#ChoroplethMap', spec2).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+    vegaEmbed('#aus_zone_map', aus_zone_map).then(function(result) {
+      // Visualization successfully rendered
+    }).catch(console.error);
+
+    vegaEmbed('#aus_min_max_temp', aus_min_max_temp).then(function(result) {
+      // Visualization successfully rendered
+    }).catch(console.error);
+  </script>
 
 </body>
 </html>

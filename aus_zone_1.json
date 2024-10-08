@@ -1,0 +1,159 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Climate Zones in Australia",
+    "font": "Verdana", 
+    "color": "white", 
+    "fontSize": 20, 
+    "anchor": "middle", 
+    "fontWeight": "bold" 
+  },  
+  "width": 800,
+  "height": 800,
+  "background": "#4a4b4d",  
+
+  "projection": {
+    "type": "mercator"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "maps/zone.json",
+        "format": {
+          "type": "topojson",
+          "feature": "Climate zones AU"
+        }
+      },
+      "mark": {
+        "type": "geoshape"
+      },
+      "transform": [
+        {
+          "lookup": "properties.clim_zone",
+          "from": {
+            "data": {
+              "values": [
+                {
+                  "clim": 1,
+                  "value": "Zone 1: high humidity summer, warm winter",
+                  "c": "#ff8554"
+                },
+                {
+                  "clim": 2,
+                  "value": "Zone 2: warm humid summer, mild winter",
+                  "c": "#f0e442"
+                },
+                {
+                  "clim": 3,
+                  "value": "Zone 3: hot dry summer, warm winter",
+                  "c": "#f2a84e"
+                },
+                {
+                  "clim": 4,
+                  "value": "Zone 4: hot dry summer, cool winter",
+                  "c": "#f2eec2"
+                },
+                {
+                  "clim": 5,
+                  "value": "Zone 5: warm temperate",
+                  "c": "#a3c97b"
+                },
+                {
+                  "clim": 6,
+                  "value": "Zone 6: mild temperate",
+                  "c": "#4db3e6"
+                },
+                {
+                  "clim": 7,
+                  "value": "Zone 7: cool temperate",
+                  "c": "#0072b2"
+                },
+                {
+                  "clim": 8,
+                  "value": "Zone 8: alpine",
+                  "c": "#f0efe9"
+                }
+              ]
+            },
+            "key": "clim",
+            "fields": [
+              "value",
+              "c"
+            ]
+          }
+        }
+      ],
+      "selection": {
+        "value_highlight": {
+          "type": "multi",
+          "fields": ["value"],
+          "bind": "legend"
+        }
+      },
+      "encoding": {
+        "color": {
+          "field": "value",
+          "type": "nominal",
+          "title": "Climate Zone",
+          "scale": {
+            "range": {
+              "field": "c"
+            }
+          }, 
+          "legend": {
+            "labelFont": "Monaco", 
+            "labelFontSize": 12, 
+            "labelColor": "white", 
+            "titleFont": "Monaco", 
+            "titleFontSize": 14, 
+            "titleColor": "white",
+            "orient": "left", 
+            "padding": 10 , 
+            "labelLimit": 500
+          }
+        },
+        "opacity": {
+          "condition": {
+            "selection": "value_highlight",
+            "value": 0.8
+          },
+          "value": 0.2
+        },
+        "tooltip": [
+          {
+            "field": "value",
+            "type": "nominal",
+            "title": "Climate Zone Description"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+          "url": "/datasets/aus_states_2.csv"
+      },
+      "mark": {
+          "type": "text",
+          "font": "Monaco",            
+          "fontSize": 12,      
+          "fontWeight":"bold",       
+          "color": "white",
+          "align": "center"  
+                  
+      },
+      "encoding": {
+          "text": {
+              "field": "State"   
+          },
+          "longitude": {
+              "field": "Lon",  
+              "type": "quantitative"
+          },
+          "latitude": {
+              "field": "Lat",   
+              "type": "quantitative"
+          }
+      }
+  }
+  ]
+}

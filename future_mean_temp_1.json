@@ -1,0 +1,79 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Annual Mean Temperature in Australia",
+    "width": 1200,
+    "height": 800,
+    "projection": {
+        "type": "mercator"
+    },
+    "layer": [
+        {
+            "data": {
+                "url": "maps/australia_map.json",
+                "format": {
+                    "type": "topojson",
+                    "feature": "SA3_2016_AUST"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "fill": "lightgrey",
+                "stroke": "white"
+            }
+        },
+        {
+            "data": {
+                "url": "/datasets/aus_states_2.csv"
+            },
+            "mark": {
+                "type": "text",
+                "fontSize": 13,
+                "color": "darkgray"
+            },
+            "encoding": {
+                "text": {
+                    "field": "State"
+                },
+                "longitude": {
+                    "field": "Lon",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "Lat",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "data": {
+                "url": "datasets/future_annual_mean_temp.csv"
+            },
+            "mark": {
+                "type": "circle"
+            },
+            "encoding": {
+                "longitude": {
+                    "field": "LON",
+                    "type": "quantitative"
+                },
+                "latitude": {
+                    "field": "LAT",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Annual",
+                    "type": "quantitative",
+                    "title": "Mean Temperature (°C)",
+                    "scale": {
+                        "domain": [12, 40],  
+                        "range": ["blue", "orange"] 
+                    }
+                },
+                "tooltip": [
+                    {"field": "STATION", "type": "ordinal", "title": "Station"},
+                    {"field": "Annual", "type": "quantitative", "title": "Annual Temperature (°C)"}
+                ]
+            }
+        }
+    ]
+}

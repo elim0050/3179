@@ -1,0 +1,119 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "Australia Rainfall",
+    "data": {
+      "url": "datasets/aus_rainfall.csv",
+      "format": {
+        "type": "csv"
+      }
+    },
+    "params": [
+        {
+          "name": "State_selection",
+          "value": "Adelaide",
+          "bind": {
+            "input": "select",
+            "options": [
+              "Adelaide",
+              "Alice Springs",
+              "Brisbane",
+              "Canberra",
+              "Darwin",
+              "Hobart",
+              "Melbourne",
+              "Perth",
+              "Broome",
+              "Sydney",
+              "Townsville",
+              "Cairns"
+            ],
+            "labels": [
+              "Adelaide",
+              "Alice Springs",
+              "Brisbane",
+              "Canberra",
+              "Darwin",
+              "Hobart",
+              "Melbourne",
+              "Perth",
+              "Broome",
+              "Sydney",
+              "Townsville",
+              "Cairns"
+            ],
+            "name": "State Selection: "
+          }
+        }
+      ],
+    "transform": [
+      {
+        "fold": [
+          "JAN",
+          "FEB",
+          "MAR",
+          "APR",
+          "MAY",
+          "JUN",
+          "JUL",
+          "AUG",
+          "SEP",
+          "OCT",
+          "NOV",
+          "DEC"
+        ],
+        "as": ["Month", "MonthVal"]
+      }, 
+      {
+        "filter": "datum.LOCATION == State_selection"
+      }
+    ],
+    
+    "mark": "area",
+    "encoding": {
+      "x": {
+        "field": "Month",
+        "type": "ordinal"  
+      },
+      "y": {
+        "field": "MonthVal",
+        "type": "quantitative"
+      },
+      "color": {
+        "field": "LOCATION",
+        "type": "nominal",
+        "scale": {
+          "domain": [
+            "Adelaide",
+            "Alice Springs",
+            "Brisbane",
+            "Canberra",
+            "Darwin",
+            "Hobart",
+            "Melbourne",
+            "Perth",
+            "Broome",
+            "Sydney",
+            "Townsville",
+            "Cairns"
+          ],
+          "range": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#2ca02c",
+            "#d62728",
+            "#9467bd",
+            "#8c564b",
+            "#e377c2",
+            "#7f7f7f",
+            "#bcbd22",
+            "#17becf",
+            "#ffbb78",
+            "#98df8a"
+          ]
+        }
+      }
+    }
+  }
+  
