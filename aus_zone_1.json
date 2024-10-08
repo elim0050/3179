@@ -18,6 +18,33 @@
   "layer": [
     {
       "data": {
+          "url": "/datasets/aus_states_2.csv"
+      },
+      "mark": {
+          "type": "text",
+          "font": "Monaco",            
+          "fontSize": 12,      
+          "fontWeight":"bold",       
+          "color": "white",
+          "align": "center"  
+                  
+      },
+      "encoding": {
+          "text": {
+              "field": "State"   
+          },
+          "longitude": {
+              "field": "Lon",  
+              "type": "quantitative"
+          },
+          "latitude": {
+              "field": "Lat",   
+              "type": "quantitative"
+          }
+      }
+  },
+    {
+      "data": {
         "url": "maps/zone.json",
         "format": {
           "type": "topojson",
@@ -127,33 +154,6 @@
           }
         ]
       }
-    },
-    {
-      "data": {
-          "url": "/datasets/aus_states_2.csv"
-      },
-      "mark": {
-          "type": "text",
-          "font": "Monaco",            
-          "fontSize": 12,      
-          "fontWeight":"bold",       
-          "color": "white",
-          "align": "center"  
-                  
-      },
-      "encoding": {
-          "text": {
-              "field": "State"   
-          },
-          "longitude": {
-              "field": "Lon",  
-              "type": "quantitative"
-          },
-          "latitude": {
-              "field": "Lat",   
-              "type": "quantitative"
-          }
-      }
-  }
+    }
   ]
 }
