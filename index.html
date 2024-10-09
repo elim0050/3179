@@ -13,6 +13,13 @@
       text-align: center; /* Center the titles */
       color: rgb(255, 255, 255); /* Set title color */
     }
+        /* Flex container for title and image */
+    .title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
 
     p, .chart-description {
       color: white; /* Set text color */
@@ -47,7 +54,12 @@
 </head>
 <body style="background-color:#4a4b4d;">
 
-  <h1>Australia Climate Overview in 2023</h1>
+  <div class="title-container">
+    <h1>Australia Climate</h1>
+    <!-- Image next to title -->
+    <img src="australia.png" alt="Map of Australia" width="100" height="100">
+  </div>
+  
   
   <!-- Climate description paragraph -->
   <p>
@@ -70,6 +82,13 @@
 
   <!-- Heading for second visualization -->
   <h2>Australia Climate Change in Year 2023</h2>
+  <p>
+    In 2023, Australia experienced notable climate variations, with extreme weather patterns affecting various regions. 
+    From heavy rainfall in some areas to prolonged dry spells in others, these shifts in weather patterns highlight 
+    the growing impact of climate change on the country's environment. This analysis provides a comprehensive view 
+    of rainfall across Australia’s capital cities, shedding light on the regional differences and the overall climate trends.
+  </p>
+  
 
   <!-- Second visualization with explanation (combined_chart) -->
   <div class="container">
