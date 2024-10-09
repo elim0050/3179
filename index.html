@@ -9,28 +9,76 @@
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" media="all">
   <style>
+    h1, h2 {
+      text-align: center; /* Center the titles */
+      color: rgb(255, 255, 255); /* Set title color */
+    }
 
+    p, .chart-description {
+      color: white; /* Set text color */
+      font-size: 18px; /* Adjust font size */
+    }
 
-h1 {
-	text-align: center; /* Center the titles */
-	color: rgb(255, 255, 255); /* Set title color */
-  }
-#aus_zone_map, #combined_chart {
-	margin: 20px; /* Add some spacing around the visualizations */
-  }
-    
+    p {
+      text-align: center; /* Center the main description */
+      margin: 20px 50px; /* Adjust margins for padding */
+    }
 
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 20px; /* Add spacing around the visualizations */
+    }
+
+    .container div {
+      margin-right: 20px; /* Space between the chart and text */
+    }
+
+    .chart-description {
+      max-width: 300px; /* Restrict width for better readability */
+    }
+
+    hr {
+      border: 1px solid white; /* White border for the divider */
+      margin: 40px 0; /* Add space around the divider */
+    }
   </style>
-
-  
 </head>
 <body style="background-color:#4a4b4d;">
-  <h1>Australia Climate </h1>
-  
-  <div id="aus_zone_map"></div>
-  
-  <div id="combined_chart"></div>
 
+  <h1>Australia Climate Overview in 2023</h1>
+  
+  <!-- Climate description paragraph -->
+  <p>
+    The year 2023 has seen significant variations in rainfall across different regions of Australia. 
+    While some areas experienced higher than average rainfall, others remained dry. This analysis provides
+    insights into the annual rainfall patterns across major cities in Australia.
+  </p>
+  
+  <!-- First visualization with explanation (aus_zone_map) -->
+  <div class="container">
+    <div id="aus_zone_map"></div>
+    <div class="chart-description">
+      <p>This chart divides Australia into 8 climate zones, representing different regions based on their climate. 
+      It helps in understanding how rainfall patterns vary across these zones in 2023.</p>
+    </div>
+  </div>
+  
+  <!-- Divider to separate the two visualizations -->
+  <hr>
+
+  <!-- Heading for second visualization -->
+  <h2>Australia Climate Change in Year 2023</h2>
+
+  <!-- Second visualization with explanation (combined_chart) -->
+  <div class="container">
+    <div id="combined_chart"></div>
+    <div class="chart-description">
+      <p>The combined charts below represent the total rainfall in the capital cities of Australia in 2023. 
+      The first chart shows monthly rainfall, and the second chart visualizes the annual totals for each city, helping compare the overall precipitation.</p>
+    </div>
+  </div>
 
   <script type="text/javascript">
     var aus_zone_map = "aus_zone_1.json";
