@@ -112,7 +112,7 @@
     },
     {
       "data": {
-        "url": "datasets/aus_states_2.csv"
+        "url": "https://raw.githubusercontent.com/elim0050/3179/refs/heads/main/datasets/aus_states_2.csv"
       },
       "mark": {
         "type": "text",
