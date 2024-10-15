@@ -16,69 +16,79 @@
   <header class="header-image">
     <h1>AUSTRALIA WEATHER & CLIMATE EXTREME</h1>
   </header>
-  
+
   <div class="container">
 
     <div>
-        <p id="myParagraph">
-      Australia's diverse climate results in different regions across the country having unique heating and cooling needs.
-      To accommodate these variations, the energy efficiency DTS Provisions differ by location.
-      For ease of use, areas with similar climates are grouped into eight climate zones.
+      <p id="myParagraph">
+        Australia's diverse climate results in different regions across the country having unique heating and cooling
+        needs.
+        To accommodate these variations, the energy efficiency DTS Provisions differ by location.
+        For ease of use, areas with similar climates are grouped into eight climate zones.
 
-    </p>
-  
-    <div id="legend-container" style="display: flex; align-items: flex-start;">
-      <div class="climate-legend" style="margin-left: 20px; margin-right: 40px;">
-        <p><strong>Climate Zones:</strong></p>
-        <div class="legend-items" style="display: flex; flex-direction: column; gap: 5px;">
-          <div class="legend-item" data-clim="1" style="display: flex; align-items: center; cursor: pointer;" onclick="highlightZone(null)">
-            <div style="width: 20px; height: 20px; background-color: #090909; margin-right: 5px;"></div>
-            <span>Show All Zone</span>
-          </div>
-          <div class="legend-item" data-clim="1" style="display: flex; align-items: center; cursor: pointer;" onclick="highlightZone(1)">
-            <div style="width: 20px; height: 20px; background-color: #ff8554; margin-right: 5px;"></div>
-            <span>Zone 1: high humidity summer, warm winter</span>
-          </div>
-          <div class="legend-item" data-clim="2" style="display: flex; align-items: center; cursor: pointer;" onclick="highlightZone(2)">
-            <div style="width: 20px; height: 20px; background-color: #f0e442; margin-right: 5px;"></div>
-            <span>Zone 2: warm humid summer, mild winter</span>
-          </div>
-          <div class="legend-item" data-clim="3" style="display: flex; align-items: center; cursor: pointer;" onclick="highlightZone(3)">
-            <div style="width: 20px; height: 20px; background-color: #f2a84e; margin-right: 5px;"></div>
-            <span>Zone 3: hot dry summer, warm winter</span>
-          </div>
-          <div class="legend-item" data-clim="4" style="display: flex; align-items: center; cursor: pointer;" onclick="highlightZone(4)">
-            <div style="width: 20px; height: 20px; background-color: #f2eec2; margin-right: 5px;"></div>
-            <span>Zone 4: hot dry summer, cool winter</span>
-          </div>
-          <div class="legend-item" data-clim="5" style="display: flex; align-items: center; cursor: pointer;" onclick="highlightZone(5)">
-            <div style="width: 20px; height: 20px; background-color: #a3c97b; margin-right: 5px;"></div>
-            <span>Zone 5: warm temperate</span>
-          </div>
-          <div class="legend-item" data-clim="6" style="display: flex; align-items: center; cursor: pointer;" onclick="highlightZone(6)">
-            <div style="width: 20px; height: 20px; background-color: #4db3e6; margin-right: 5px;"></div>
-            <span>Zone 6: mild temperate</span>
-          </div>
-          <div class="legend-item" data-clim="7" style="display: flex; align-items: center; cursor: pointer;" onclick="highlightZone(7)">
-            <div style="width: 20px; height: 20px; background-color: #0072b2; margin-right: 5px;"></div>
-            <span>Zone 7: cool temperate</span>
-          </div>
-          <div class="legend-item" data-clim="8" style="display: flex; align-items: center; cursor: pointer;" onclick="highlightZone(8)">
-            <div style="width: 20px; height: 20px; background-color: #636362; margin-right: 5px;"></div>
-            <span>Zone 8: alpine</span>
+      </p>
+
+      <div id="legend-container" style="display: flex; align-items: flex-start;">
+        <div class="climate-legend" style="margin-left: 20px; margin-right: 40px;">
+          <p><strong>Climate Zones:</strong></p>
+          <div class="legend-items" style="display: flex; flex-direction: column; gap: 5px;">
+            <div class="legend-item" data-clim="1" style="display: flex; align-items: center; cursor: pointer;"
+              onclick="highlightZone(null)">
+              <div style="width: 20px; height: 20px; background-color: #090909; margin-right: 5px;"></div>
+              <span>Show All Zone</span>
+            </div>
+            <div class="legend-item" data-clim="1" style="display: flex; align-items: center; cursor: pointer;"
+              onclick="highlightZone(1)">
+              <div style="width: 20px; height: 20px; background-color: #ff8554; margin-right: 5px;"></div>
+              <span>Zone 1: high humidity summer, warm winter</span>
+            </div>
+            <div class="legend-item" data-clim="2" style="display: flex; align-items: center; cursor: pointer;"
+              onclick="highlightZone(2)">
+              <div style="width: 20px; height: 20px; background-color: #f0e442; margin-right: 5px;"></div>
+              <span>Zone 2: warm humid summer, mild winter</span>
+            </div>
+            <div class="legend-item" data-clim="3" style="display: flex; align-items: center; cursor: pointer;"
+              onclick="highlightZone(3)">
+              <div style="width: 20px; height: 20px; background-color: #f2a84e; margin-right: 5px;"></div>
+              <span>Zone 3: hot dry summer, warm winter</span>
+            </div>
+            <div class="legend-item" data-clim="4" style="display: flex; align-items: center; cursor: pointer;"
+              onclick="highlightZone(4)">
+              <div style="width: 20px; height: 20px; background-color: #f2eec2; margin-right: 5px;"></div>
+              <span>Zone 4: hot dry summer, cool winter</span>
+            </div>
+            <div class="legend-item" data-clim="5" style="display: flex; align-items: center; cursor: pointer;"
+              onclick="highlightZone(5)">
+              <div style="width: 20px; height: 20px; background-color: #a3c97b; margin-right: 5px;"></div>
+              <span>Zone 5: warm temperate</span>
+            </div>
+            <div class="legend-item" data-clim="6" style="display: flex; align-items: center; cursor: pointer;"
+              onclick="highlightZone(6)">
+              <div style="width: 20px; height: 20px; background-color: #4db3e6; margin-right: 5px;"></div>
+              <span>Zone 6: mild temperate</span>
+            </div>
+            <div class="legend-item" data-clim="7" style="display: flex; align-items: center; cursor: pointer;"
+              onclick="highlightZone(7)">
+              <div style="width: 20px; height: 20px; background-color: #0072b2; margin-right: 5px;"></div>
+              <span>Zone 7: cool temperate</span>
+            </div>
+            <div class="legend-item" data-clim="8" style="display: flex; align-items: center; cursor: pointer;"
+              onclick="highlightZone(8)">
+              <div style="width: 20px; height: 20px; background-color: #636362; margin-right: 5px;"></div>
+              <span>Zone 8: alpine</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
     </div>
 
 
 
 
-  <div id="map_container">
-    <div id="aus_zone_map"></div>
-  </div>
+    <div id="map_container">
+      <div id="aus_zone_map"></div>
+    </div>
   </div>
 
 
@@ -104,7 +114,8 @@
       Feel free to select from the dropdown menu to explore rainfall data for different locations.
     </p>
 
-    <div class="flags-container" style="display: flex; gap: 10px; margin-bottom: 10px; margin-left: 80px;margin-right: 80px;">
+    <div class="flags-container"
+      style="display: flex; gap: 10px; margin-bottom: 10px; margin-left: 80px;margin-right: 80px;">
       <div class="legend-middle">
         <img src="flags/Adelaide.png" alt="Adelaide" id="Adelaide" class="flag-image" />
         <div class="legend-item">
@@ -163,41 +174,47 @@
 
   <hr>
 
-  <div class="container" id = "min-max-container">
+  <div class="container" id="min-max-container">
     <div>
       <p>
         This graph illustrates the range between the minimum and maximum temperatures across Australia's cities,
-         highlighting the country's extreme weather patterns. 
-         Use the dropdown menu to explore temperature variations 
-         for different cities and gain insights into their unique climate conditions.
-    </p>
-    <div  style="display: flex; align-items: center; margin-top: 20px; margin-right: 20px; margin-left: 20px; padding: 30px;">
-      <select id="State-selection-legend" class="styled-select"  style="margin-right: 30px;">
-        <option value="Adelaide">Adelaide</option>
-        <option value="Brisbane">Brisbane</option>
-        <option value="Canberra">Canberra</option>
-        <option value="Darwin">Darwin</option>
-        <option value="Hobart">Hobart</option>
-        <option value="Melbourne">Melbourne</option>
-        <option value="Perth">Perth</option>
-        <option value="Sydney">Sydney</option>
-      </select>
-    <div class="custom-legend" style="display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
-      
-      <button id="reset-button" class="legend-button" style="background-color: #82a482; color: white; border: none; padding: 10px 20px; margin: 5px 0; border-radius: 5px; cursor: pointer;">
-        Show All 
-      </button>
-      <button id="min-button" class="legend-button" style="background-color: #2577fa; color: white; border: none; padding: 10px 20px; margin: 5px 0; border-radius: 5px; cursor: pointer;">
-        Min Temperature
-      </button>
-      <button id="max-button" class="legend-button" style="background-color: #f57749; color: white; border: none; padding: 10px 20px; margin: 5px 0; border-radius: 5px; cursor: pointer;">
-        Max Temperature
-      </button>
-    </div>
+        highlighting the country's extreme weather patterns.
+        Use the dropdown menu to explore temperature variations
+        for different cities and gain insights into their unique climate conditions.
+      </p>
+      <div
+        style="display: flex; align-items: center; margin-top: 20px; margin-right: 20px; margin-left: 20px; padding: 30px;">
+        <select id="State-selection-legend" class="styled-select" style="margin-right: 30px;">
+          <option value="Adelaide">Adelaide</option>
+          <option value="Brisbane">Brisbane</option>
+          <option value="Canberra">Canberra</option>
+          <option value="Darwin">Darwin</option>
+          <option value="Hobart">Hobart</option>
+          <option value="Melbourne">Melbourne</option>
+          <option value="Perth">Perth</option>
+          <option value="Sydney">Sydney</option>
+        </select>
+        <div class="custom-legend"
+          style="display: flex; flex-direction: column; align-items: center; margin-top: 20px;">
 
+          <button id="reset-button" class="legend-button"
+            style="background-color: #82a482; color: white; border: none; padding: 10px 20px; margin: 5px 0; border-radius: 5px; cursor: pointer;">
+            Show All
+          </button>
+          <button id="min-button" class="legend-button"
+            style="background-color: #2577fa; color: white; border: none; padding: 10px 20px; margin: 5px 0; border-radius: 5px; cursor: pointer;">
+            Min Temperature
+          </button>
+          <button id="max-button" class="legend-button"
+            style="background-color: #f57749; color: white; border: none; padding: 10px 20px; margin: 5px 0; border-radius: 5px; cursor: pointer;">
+            Max Temperature
+          </button>
+        </div>
+
+      </div>
     </div>
-    </div>
-    <div id="aus_min_max_temp"  class="map-extreme" style="margin-right: 10px ; background-color: #e9eef7; margin-left: 30px ;"></div>
+    <div id="aus_min_max_temp" class="map-extreme"
+      style="margin-right: 10px ; background-color: #e9eef7; margin-left: 30px ;"></div>
   </div>
 
 
@@ -271,6 +288,12 @@
 
   <div id="aus_extreme_temp" class="map-extreme"></div>
 
+  <div class="author">
+    <p><strong>Author:</strong> Ethel Lim Jia Yee</p>
+    <p><strong>Data Source:</strong> bejbcejbejbfejfbeje</p>
+  </div>
+
+
 
 
 
@@ -285,19 +308,19 @@
     var aus_highest_annual_rainfall = "aus_highest_annual_rainfall.json";
     var aus_extreme_temp = "aus_extreme_temp.json";
 
-    let zone_view ; 
+    let zone_view;
 
     vegaEmbed('#aus_zone_map', aus_zone_map).then(function (result) {
       zone_view = result.view;
-   
+
     }).catch(console.error);
 
     function highlightZone(zone) {
-    if (zone_view) {
-      // Send a signal to Vega-Lite with the selected zone
-      zone_view.signal('highlight_type', zone).run();
+      if (zone_view) {
+        // Send a signal to Vega-Lite with the selected zone
+        zone_view.signal('highlight_type', zone).run();
+      }
     }
-  }
 
     vegaEmbed('#combined_chart', combined_chart).then(function (result) {
 
@@ -331,19 +354,19 @@
         view.run();
       });
 
-        // Add click event listener to the 'Min Temperature' button
-        document.getElementById('min-button').addEventListener('click', function () {
-          view.signal('highlight_type', 'min').run();
-        });
+      // Add click event listener to the 'Min Temperature' button
+      document.getElementById('min-button').addEventListener('click', function () {
+        view.signal('highlight_type', 'min').run();
+      });
 
-        // Add click event listener to the 'Max Temperature' button
-        document.getElementById('max-button').addEventListener('click', function () {
-          view.signal('highlight_type', 'max').run();
-        });
-        // Add click event listener to the 'Max Temperature' button
-        document.getElementById('reset-button').addEventListener('click', function () {
-          view.signal('highlight_type', null).run();
-        });
+      // Add click event listener to the 'Max Temperature' button
+      document.getElementById('max-button').addEventListener('click', function () {
+        view.signal('highlight_type', 'max').run();
+      });
+      // Add click event listener to the 'Max Temperature' button
+      document.getElementById('reset-button').addEventListener('click', function () {
+        view.signal('highlight_type', null).run();
+      });
 
       // Visualization successfully rendered
     }).catch(console.error);

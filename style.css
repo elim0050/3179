@@ -272,3 +272,19 @@ h2 {
     border-color: #2577fa; /* Change border color on focus */
     box-shadow: 0 0 5px rgba(37, 119, 250, 0.5); /* Add a shadow */
   }
+
+  .author {
+	margin-top: 30px;
+	text-align: left;
+	font-size: 8px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: #555;
+	margin-left: 10px;
+
+  }
+
+  .author p{
+	margin: 5px 0;
+	font-size: 14px;
+
+  }
