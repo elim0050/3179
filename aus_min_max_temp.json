@@ -12,12 +12,11 @@
   ],
   "title": {
     "text": "Cities Minimum and Maximum Temperature",
-    "font": "Verdana", 
-    "color": "black", 
-    "fontSize": 20, 
-    "anchor": "middle", 
-    "fontWeight": "bold" 
-  },
+    "fontSize": 20,  
+    "font": "Times New Roman" , 
+    "align": "center",  
+    "anchor": "middle" 
+},
   "width": 600,
   "height": 300,
   "background": "#e9eef7",
@@ -61,6 +60,7 @@
   ],
   "encoding": {
     "x": {
+      "title": null,
       "field": "Month",
       "type": "nominal",
       "sort": [
@@ -142,7 +142,7 @@
         },
         "opacity": {
           "condition": {
-"test": "highlight_type === null || datum.TYPE == highlight_type",          
+"test": "highlight_type == null || datum.TYPE == highlight_type",          
   "value": 1
           },
           "value": 0.2

@@ -55,7 +55,7 @@ p {
 	/* Align text to the left */
 	margin: 20px auto;
 	/* Center the paragraph by setting left and right margins to auto */
-	max-width: 600px;
+	max-width: 550px;
 	/* Maximum width for the paragraph */
 	word-wrap: break-word;
 	/* Allow words to break within the width */

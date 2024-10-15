@@ -2,7 +2,13 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 800,
   "height": 800,
-  "background": "#e4e2e2" , 
+  "background": "#e4e2e2",
+  "params": [
+    {
+      "name": "highlight_type",
+      "value": null
+    }
+  ],
   "projection": {
     "type": "mercator"
   },
@@ -69,41 +75,28 @@
             "key": "clim",
             "fields": [
               "value",
+              "clim",
               "c"
             ]
           }
         }
       ],
-      "selection": {
-        "value_highlight": {
-          "type": "multi",
-          "fields": ["value"],
-          "bind": "legend"
-        }
-      },
       "encoding": {
         "color": {
-          "field": "value",
+          "field": "clim",
+          "legend": null, 
           "type": "nominal",
           "title": "Climate Zone",
           "scale": {
             "range": {
               "field": "c"
             }
-          }, 
-          "legend": {
-            "labelFont": "Times New Roman", 
-            "labelFontSize": 15, 
-            "titleFont": "Times New Roman", 
-            "titleFontSize": 20, 
-            "orient": "left", 
-            "padding": 50 , 
-            "labelLimit": 500
           }
         },
+        
         "opacity": {
           "condition": {
-            "selection": "value_highlight",
+            "test": "highlight_type == null || datum.clim == highlight_type",
             "value": 0.8
           },
           "value": 0.2
@@ -116,35 +109,38 @@
           }
         ]
       }
-    }, 
+    },
     {
       "data": {
-          "url": "/datasets/aus_states_2.csv"
+        "url": "/datasets/aus_states_2.csv"
       },
       "mark": {
-          "type": "text",
-          "font": "Monaco",            
-          "fontSize": 12,      
-          "fontWeight":"bold",       
-          "color": "white",
-          "align": "center"  
-                  
+        "type": "text",
+        "font": "Monaco",
+        "fontSize": 12,
+        "fontWeight": "bold",
+        "color": "white",
+        "align": "center"
       },
       "encoding": {
-          "text": {
-              "field": "State"  
-          },
-          "color": {"value": "white"},
-          "opacity":{"value":1},
-          "longitude": {
-              "field": "Lon",  
-              "type": "quantitative"
-          },
-          "latitude": {
-              "field": "Lat",   
-              "type": "quantitative"
-          }
+        "text": {
+          "field": "State"
+        },
+        "color": {
+          "value": "white"
+        },
+        "opacity": {
+          "value": 1
+        },
+        "longitude": {
+          "field": "Lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "Lat",
+          "type": "quantitative"
+        }
       }
-  }
+    }
   ]
 }
