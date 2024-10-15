@@ -112,7 +112,7 @@
     },
     {
       "data": {
-        "url": "/datasets/aus_states_2.csv"
+        "url": "datasets/aus_states_2.csv"
       },
       "mark": {
         "type": "text",
