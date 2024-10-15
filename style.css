@@ -1,12 +1,274 @@
+.header-image {
+	background-image: url('australia_weather_img.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 280px;
+	/* Adjust height as needed */
+	width: 100%;
+	/* Make background span the full width of the viewport */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	/* Adjust text color for contrast */
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	/* Optional for better readability */
+	margin-bottom: 50px;
+}
 
-body {
-	background-color: ""#4a4b4d""; /* Set the background color */
-	font-family: Arial, sans-serif; /* Set a default font */
-  }
 h1 {
-	text-align: center; /* Center the titles */
-	color: rgb(255, 255, 255); /* Set title color */
+	letter-spacing: 6px;
+	text-align: center;
+	/* Center the titles */
+	font-family: "Raleway", "Arial", sans-serif;
+	/* Apply Century Gothic or fallback to Arial */
+	line-height: 1.2;
+	/* Line height for better spacing */
+	padding: 20px 0;
+	/* Add padding to give spacing inside */
+	width: 100%;
+	/* Make background span the full width of the viewport */
+	height: 130px;
+	margin: 70px;
+	/* Remove default margin to prevent extra space around */
+}
+
+
+/* {font-family: "Raleway", Arial, sans-serif} */
+/* Flex container for title and image */
+.title-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+p,
+.chart-description {
+	color: rgb(114, 113, 113);
+	/* Set text color */
+	font-size: 18px;
+	/* Adjust font size */
+}
+
+p {
+	text-align: left;
+	/* Align text to the left */
+	margin: 20px auto;
+	/* Center the paragraph by setting left and right margins to auto */
+	max-width: 600px;
+	/* Maximum width for the paragraph */
+	word-wrap: break-word;
+	/* Allow words to break within the width */
+	line-height: 1.5;
+	/* Line height for better readability */
+}
+
+
+.limited-width {
+	max-width: 300px;
+	/* Adjust this value to control how many words fit per line */
+	word-wrap: break-word;
+}
+
+#map_container {
+	text-align: center;
+	/* Center the content inside the container */
+	margin: 20px 0;
+	/* Optional: Add vertical margin */
+}
+
+#aus_zone_map {
+	display: inline-block;
+	/* Allow block-level elements to be centered */
+	width: 100%;
+	/* Adjust to your desired width */
+	height: 100%;
+	/* Set a height for the map */
+}
+
+
+
+.divider {
+	margin-top: 50px;
+
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 20px;
+	margin-left: 20px;
+	/* Space between the chart and text */
+}
+
+
+hr {
+	border: 1px solid white;
+	/* White border for the divider */
+	margin: 30px 0;
+	/* Add space around the divider */
+}
+
+.visualization-header {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	/* Use flexbox to align items side by side */
+	background-color: #6b6b6b;
+	/* Set a background color for the header */
+	padding: 20px;
+	/* Add padding for spacing */
+	margin: 20px 0;
+	/* Add vertical margin */
+	border-radius: 10px;
+	height: 250px;
+}
+
+.visualization-header h2 {
+	text-align: center;
+	/* Center align the h2 text */
+	flex: 1;
+	/* Allow the h2 to take up space */
+
+}
+
+h2 {
+	font-family: "Raleway", "Arial", sans-serif;
+	/* Apply Century Gothic or fallback to Arial */
+	letter-spacing: 2px;
+	font-size: 30px;
+	color: white;
+}
+
+.map_boxes {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	/* Use flexbox to align items side by side */
+	gap: 40px;
+	margin-right: 40px;
+	margin-left: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.map {
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	background-color: #dae0eb;
+	/* Rounded corners */
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+	/* Box shadow for the 3D effect */
+	position: relative;
+	/* Position for pseudo-elements */
+	transition: transform 0.3s;
+	/* Smooth transition for hover effect */
+}
+
+.map-extreme {
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	/* Space between the chart and text */
+	background-color: rgb(255, 255, 255);
+	/* Transparent background */
+	border-radius: 8px;
+	/* Rounded corners */
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+	/* Shadow effect */
+	/* Ensures child elements do not overflow */
+	margin-right: 10px;
+	margin-left: 60px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.info-legend-container {
+	display: flex;
+	flex-direction: column; /* Stack items vertically */
+	margin-bottom: 20px;
+	margin-left: 40px;
   }
-#aus_zone_map, #aus_min_max_temp {
-	margin: 20px; /* Add some spacing around the visualizations */
+  
+  .flag-image {
+	width: 100px;
+	height: 50px;
+	transition: transform 0.3s, box-shadow 0.3s;
+	cursor: pointer;
+  }
+  
+  .flag-image:hover {
+	transform: scale(1.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+
+
+/* Optional hover effect */
+.map:hover {
+	transform: translateY(-5px);
+	/* Lift effect on hover */
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+	/* Darker shadow on hover */
+}
+.legend {
+    display: flex;
+    justify-content: flex-start; /* Align items to the start */
+    margin-bottom: 20px;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 40px;
+
+  }
+
+  .legend-middle {
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    margin-bottom: 10px;
+	margin-top: 10px;
+	margin-right: 40px;
+  }
+
+  .legend-box {
+    width: 20px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid #000;
+  }
+
+  .legend-item {
+    display: flex;
+	color:  #333;
+    align-items: center;
+	font-size: 15px;
+    margin-right: 20px; /* Space between legend items */
+	margin-top: 10px;
+  }
+
+  .styled-select {
+    width: 200px; /* Set width */
+    padding: 10px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Border styling */
+    background-color: #f9f9f9; /* Background color */
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Change cursor */
+  }
+
+  /* Optional: Change the appearance when hovering */
+  .styled-select:hover {
+    border-color: #2577fa; /* Change border color on hover */
+    background-color: #e1f3ff; /* Change background color on hover */
+  }
+
+  /* Optional: Change the appearance when focused */
+  .styled-select:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #2577fa; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(37, 119, 250, 0.5); /* Add a shadow */
   }

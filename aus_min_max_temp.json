@@ -1,56 +1,26 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "A ranged dot plot showing the minimum and maximum temperatures for each month, filtered by location.",
   "params": [
     {
       "name": "State_selection",
-      "value": "Adelaide",
-      "bind": {
-        "input": "select",
-        "options": [
-          "Adelaide",
-          "Alice Springs",
-          "Brisbane",
-          "Canberra",
-          "Darwin",
-          "Hobart",
-          "Melbourne",
-          "Perth",
-          "Broome",
-          "Sydney",
-          "Townsville",
-          "Cairns"
-        ],
-        "labels": [
-          "Adelaide",
-          "Alice Springs",
-          "Brisbane",
-          "Canberra",
-          "Darwin",
-          "Hobart",
-          "Melbourne",
-          "Perth",
-          "Broome",
-          "Sydney",
-          "Townsville",
-          "Cairns"
-        ],
-        "name": "State Selection: "
-      }
+      "value": "Adelaide"
+    }, 
+    {
+      "name": "highlight_type",
+      "value": null 
     }
   ],
   "title": {
-    "text": "Capital Cities Minimum and Maximum Temperature",
+    "text": "Cities Minimum and Maximum Temperature",
     "font": "Verdana", 
-    "color": "white", 
+    "color": "black", 
     "fontSize": 20, 
     "anchor": "middle", 
     "fontWeight": "bold" 
   },
-  "width": 400,
-  "height": 400,
-  "background": "#4a4b4d",  
-
+  "width": 600,
+  "height": 300,
+  "background": "#e9eef7",
   "data": {
     "url": "datasets/aus_min_max_temp.csv"
   },
@@ -112,10 +82,10 @@
         "ticks": true,
         "minExtent": 70,
         "domain": true,
-        "domainColor": "white",
-        "tickColor": "white",
-        "labelColor": "white" , 
-        "titleColor": "white" 
+        "domainColor": "black",
+        "tickColor": "black",
+        "labelColor": "black" , 
+        "titleColor": "black" 
       }
     },
     "y": {
@@ -124,11 +94,11 @@
       "title": "Temperature values ",
       "axis": {
         "domain": true,
-        "domainColor": "white",
+        "domainColor": "black",
         "ticks": true,
-        "tickColor": "white",
-        "labelColor": "white" , 
-        "titleColor": "white" 
+        "tickColor": "black",
+        "labelColor": "black" , 
+        "titleColor": "black" 
       }
     }
   },
@@ -146,13 +116,6 @@
       }
     },
     {
-      "selection": {
-        "type_highlight": {
-          "type": "multi",
-          "fields": ["TYPE"],
-          "bind": "legend"
-        }
-      },
       "mark": {
         "type": "point",
         "filled": true
@@ -161,36 +124,26 @@
         "color": {
           "field": "TYPE",
           "type": "ordinal",
+          "legend": null, 
           "scale": {
             "domain": [
               "min",
               "max"
             ],
             "range": [
-              "#e6959c",
-              "#911a24"
+              "#2577fa",
+              "#f57749"
             ]
           },
-          "title": "type", 
-          "legend": {
-            "labelFont": "Monaco", 
-            "labelFontSize": 12, 
-            "labelColor": "white", 
-            "titleFont": "Monaco", 
-            "titleFontSize": 14, 
-            "titleColor": "white",
-            "orient": "left", 
-            "padding": 10 , 
-            "labelLimit": 500
-          }
+          "title": "Type"
         },
         "size": {
           "value": 100
         },
         "opacity": {
           "condition": {
-            "selection": "type_highlight",
-            "value": 1
+"test": "highlight_type === null || datum.TYPE == highlight_type",          
+  "value": 1
           },
           "value": 0.2
         },
@@ -208,10 +161,5 @@
         ]
       }
     }
-  ],
-  "config": {
-    "legend": {
-      "labelColor": "white" 
-    }
-  }
+  ]
 }

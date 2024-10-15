@@ -1,0 +1,44 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 300,
+    "layer": [
+      {
+        "data": {
+          "url": "maps/australia_map.json",
+          "format": {
+            "type": "topojson",
+            "feature": "SA3_2016_AUST"
+          }
+        },
+        "projection": {
+          "type": "mercator"
+        },
+        "mark": {
+          "type": "geoshape",
+          "fill": "lightgray",
+          "stroke": "white"
+        }
+      },
+      {
+        "data": {
+          "url": "datasets/future_annual_mean.csv"
+        },
+
+        "mark": "circle",
+        "encoding": {
+          "longitude": {
+            "field": "LAT",
+            "type": "quantitative"
+          },
+          "latitude": {
+            "field": "LON",
+            "type": "quantitative"
+          },
+          "size": {"value": 10},
+          "color": {"value": "steelblue"}
+        }
+      }
+    ]
+  }
+  

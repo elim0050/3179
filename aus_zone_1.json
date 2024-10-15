@@ -1,17 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Climate Zones in Australia",
-    "font": "Verdana", 
-    "color": "white", 
-    "fontSize": 20, 
-    "anchor": "middle", 
-    "fontWeight": "bold" 
-  },  
   "width": 800,
   "height": 800,
-  "background": "#4a4b4d",  
-
+  "background": "#e4e2e2" , 
   "projection": {
     "type": "mercator"
   },
@@ -71,7 +62,7 @@
                 {
                   "clim": 8,
                   "value": "Zone 8: alpine",
-                  "c": "#f0efe9"
+                  "c": "#636362"
                 }
               ]
             },
@@ -101,14 +92,12 @@
             }
           }, 
           "legend": {
-            "labelFont": "Monaco", 
-            "labelFontSize": 12, 
-            "labelColor": "white", 
-            "titleFont": "Monaco", 
-            "titleFontSize": 14, 
-            "titleColor": "white",
+            "labelFont": "Times New Roman", 
+            "labelFontSize": 15, 
+            "titleFont": "Times New Roman", 
+            "titleFontSize": 20, 
             "orient": "left", 
-            "padding": 10 , 
+            "padding": 50 , 
             "labelLimit": 500
           }
         },

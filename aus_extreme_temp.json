@@ -1,0 +1,148 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "datasets/aus_extreme_temp_fixed.csv"
+    },
+    "background": "#ffffff" ,
+    "params": [
+        {
+            "name": "temp_selection",
+            "value": null
+        }
+    ],
+    "transform": [
+        {
+            "fold": [
+                "Lowest",
+                "1st",
+                "3rd",
+                "97th",
+                "99th",
+                "Highest"
+            ],
+            "as": [
+                "extremeTitle",
+                "extremeVal"
+            ]
+        }, 
+        {
+            "filter": "temp_selection == null || datum.extremeTitle == temp_selection"
+        }
+    ],
+    "vconcat": [
+        {
+            "width": 1200,
+            "height": 400,
+            "mark": "line",
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal",
+                    "scale": {
+                        "domain": {
+                            "param": "brush"
+                        }
+                    },
+                    "axis": {
+                        "title": "", 
+                        "grid": false
+
+                    }
+                },
+                "y": {
+                    "field": "extremeVal",
+                    "type": "quantitative", 
+                    "axis": {
+                        "title": "(%)",
+                        "tickCount": 3,
+                        "grid": false
+                    }
+                },
+                "color": {
+                    "field": "extremeTitle",
+                    "type": "nominal",
+                    "legend": null,
+                    "scale": {
+                        "domain": [
+                            "Lowest",
+                            "1st",
+                            "3rd",
+                            "97th",
+                            "99th",
+                            "Highest"
+                        ],
+                        "range": [
+                            "#1f77b4", 
+                            "#ff7f0e", 
+                            "#2ca02c",
+                            "#d62728",
+                            "#9467bd", 
+                            "#8c564b"  
+                        ]
+                    }
+                }
+                , 
+                "tooltip":[
+                    {
+                        "field": "extremeTitle",
+                        "type": "nominal",
+                        "title": "Category"
+                      }, 
+                    {
+                        "field": "Date",
+                        "type": "temporal",
+                        "title": "Date"
+                      },
+                      {
+                        "field": "extremeVal",
+                        "type": "quantitative",
+                        "title": "Value"
+                      }
+
+                ]
+            }
+        },
+        {
+            "width": 1200,
+            "height": 60,
+            "mark": "line",
+            "params": [
+                {
+                    "name": "brush",
+                    "select": {
+                        "type": "interval",
+                        "encodings": [
+                            "x"
+                        ]
+                    }
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "Date",
+                    "type": "temporal", 
+                    "axis":{
+                        "grid": false
+                    }
+                },
+                "y": {
+                    "field": "extremeVal",
+                    "type": "quantitative",
+                    "axis": {
+                        "title": "(%)",
+
+                        "tickCount": 3,
+                        "grid": false
+                    }
+                },
+                "color": {
+                    "field": "extremeTitle",
+                    "type": "nominal", 
+                    "legend": null
+                }
+
+                
+            }
+        }
+    ]
+}

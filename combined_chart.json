@@ -1,57 +1,25 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Annual Rainfall Australia",
+        "fontSize": 25,  
+        "font": "Times New Roman" , 
+        "align": "center",  
+        "anchor": "middle",  
+        "dy": -10
+    },
+    "background": "#e9eef7",
+
     "params": [
         {
             "name": "State_selection",
-            "value": "Adelaide",
-            "bind": {
-                "input": "select",
-                "options": [
-                    "Adelaide",
-                    "Alice Springs",
-                    "Brisbane",
-                    "Canberra",
-                    "Darwin",
-                    "Hobart",
-                    "Melbourne",
-                    "Perth",
-                    "Broome",
-                    "Sydney",
-                    "Townsville",
-                    "Cairns"
-                ],
-                "labels": [
-                    "Adelaide",
-                    "Alice Springs",
-                    "Brisbane",
-                    "Canberra",
-                    "Darwin",
-                    "Hobart",
-                    "Melbourne",
-                    "Perth",
-                    "Broome",
-                    "Sydney",
-                    "Townsville",
-                    "Cairns"
-                ],
-                "name": "State Selection: "
-            }
+            "value": "Adelaide"
         }
     ],
     "columns": 2,
-    "background": "#4a4b4d",
-    
-        "title": {
-            "text": "Capital Cities Rainfall in Year 2023",
-            "font": "Verdana",
-            "color": "white",
-            "fontSize": 15,
-            "anchor": "middle",
-            "fontWeight": "bold"
-        },
     "concat": [
         {
-            "width": 300,
+            "width": 700,
             "height": 300,
             "data": {
                 "url": "datasets/aus_rainfall.csv",
@@ -109,9 +77,9 @@
                         "ticks": true,
                         "minExtent": 70,
                         "domain": true,
-                        "domainColor": "white",
-                        "tickColor": "white",
-                        "labelColor": "white"
+                        "domainColor": "black",
+                        "tickColor": "black",
+                        "labelColor": "black"
                     }
                 },
                 "y": {
@@ -120,11 +88,11 @@
                     "title": "Rainfall",
                     "axis": {
                         "domain": true,
-                        "domainColor": "white",
+                        "domainColor": "black",
                         "ticks": true,
-                        "tickColor": "white",
-                        "labelColor": "white",
-                        "titleColor": "white"
+                        "tickColor": "black",
+                        "labelColor": "black",
+                        "titleColor": "black"
                     }
                 },
                 "color": {
@@ -133,44 +101,33 @@
                     "scale": {
                         "domain": [
                             "Adelaide",
-                            "Alice Springs",
                             "Brisbane",
                             "Canberra",
                             "Darwin",
                             "Hobart",
                             "Melbourne",
                             "Perth",
-                            "Broome",
-                            "Sydney",
-                            "Townsville",
-                            "Cairns"
+                            "Sydney"
                         ],
                         "range": [
                             "#1f77b4",
-                            "#ff7f0e",
                             "#2ca02c",
                             "#d62728",
                             "#9467bd",
                             "#8c564b",
                             "#e377c2",
                             "#7f7f7f",
-                            "#bcbd22",
-                            "#17becf",
-                            "#ffbb78",
-                            "#98df8a"
+                            "#bcbd22"
                         ]
                     },
-                    "legend": {
-                        "labelFont": "Monaco",
-                        "labelFontSize": 12,
-                        "labelColor": "white",
-                        "titleFont": "Monaco",
-                        "titleFontSize": 14,
-                        "titleColor": "white",
-                        "orient": "left",
-                        "labelLimit": 500
-                    }
-                }
+                    "legend": null
+
+                }, 
+                "tooltip": [ 
+                    {"field": "LOCATION", "title": "City"},
+                    {"field": "Month", "title": "Month"},
+                    {"field": "MonthVal", "title": "Rainfall"}
+                  ]
             }
         },
         { "width": 300,
@@ -188,34 +145,26 @@
             "type": "nominal",
             "legend": null,
             "scale": {
-              "domain": [
-                "Adelaide",
-                "Alice Springs",
-                "Brisbane",
-                "Canberra",
-                "Darwin",
-                "Hobart",
-                "Melbourne",
-                "Perth",
-                "Broome",
-                "Sydney",
-                "Townsville",
-                "Cairns"
-              ],
-              "range": [
-                "#1f77b4",
-                "#ff7f0e",
-                "#2ca02c",
-                "#d62728",
-                "#9467bd",
-                "#8c564b",
-                "#e377c2",
-                "#7f7f7f",
-                "#bcbd22",
-                "#17becf",
-                "#ffbb78",
-                "#98df8a"
-              ]
+                "domain": [
+                    "Adelaide",
+                    "Brisbane",
+                    "Canberra",
+                    "Darwin",
+                    "Hobart",
+                    "Melbourne",
+                    "Perth",
+                    "Sydney"
+                ],
+                "range": [
+                    "#1f77b4",
+                    "#2ca02c",
+                    "#d62728",
+                    "#9467bd",
+                    "#8c564b",
+                    "#e377c2",
+                    "#7f7f7f",
+                    "#bcbd22"
+                ]
             }
           },
       "opacity": {
@@ -227,7 +176,7 @@
       }
       ,
           "tooltip": [ 
-            {"field": "LOCATION", "title": "Location"},
+            {"field": "LOCATION", "title": "City"},
             {"field": "ANNUAL", "title": "Annual Rainfall"}
           ]
         },
@@ -237,177 +186,7 @@
           "stroke": "#fff"
         }
       }
-      ,
-        {
-            "title": {
-                "text": "Capital Cities Minimum and Maximum Temperature",
-                "font": "Verdana",
-                "color": "white",
-                "fontSize": 15,
-                "anchor": "middle",
-                "fontWeight": "bold"
-            },
-            "width": 400,
-            "height": 400,
-            "data": {
-                "url": "datasets/aus_min_max_temp.csv"
-            },
-            "transform": [
-                {
-                    "fold": [
-                        "JAN",
-                        "FEB",
-                        "MAR",
-                        "APR",
-                        "MAY",
-                        "JUN",
-                        "JUL",
-                        "AUG",
-                        "SEP",
-                        "OCT",
-                        "NOV",
-                        "DEC"
-                    ],
-                    "as": [
-                        "Month",
-                        "MonthVAl"
-                    ]
-                },
-                {
-                    "filter": {
-                        "field": "TYPE",
-                        "oneOf": [
-                            "min",
-                            "max"
-                        ]
-                    }
-                },
-                {
-                    "filter": "datum.LOCATION == State_selection"
-                }
-            ],
-            "encoding": {
-                "x": {
-                    "field": "Month",
-                    "type": "nominal",
-                    "title": null,
-                    "sort": [
-                        "JAN",
-                        "FEB",
-                        "MAR",
-                        "APR",
-                        "MAY",
-                        "JUN",
-                        "JUL",
-                        "AUG",
-                        "SEP",
-                        "OCT",
-                        "NOV",
-                        "DEC"
-                    ],
-                    "axis": {
-                        "offset": 5,
-                        "ticks": true,
-                        "minExtent": 70,
-                        "domain": true,
-                        "domainColor": "white",
-                        "tickColor": "white",
-                        "labelColor": "white"
-                    }
-                },
-                "y": {
-                    "field": "MonthVAl",
-                    "type": "quantitative",
-                    "title": "Temperature values ",
-                    "axis": {
-                        "domain": true,
-                        "domainColor": "white",
-                        "ticks": true,
-                        "tickColor": "white",
-                        "labelColor": "white",
-                        "titleColor": "white"
-                    }
-                }
-            },
-            "layer": [
-                {
-                    "mark": "line",
-                    "encoding": {
-                        "detail": {
-                            "field": "Month",
-                            "type": "nominal"
-                        },
-                        "color": {
-                            "value": "#db646f"
-                        }
-                    }
-                },
-                {
-                    "selection": {
-                        "type_highlight": {
-                            "type": "multi",
-                            "fields": [
-                                "TYPE"
-                            ],
-                            "bind": "legend"
-                        }
-                    },
-                    "mark": {
-                        "type": "point",
-                        "filled": true
-                    },
-                    "encoding": {
-                        "color": {
-                            "field": "TYPE",
-                            "type": "ordinal",
-                            "scale": {
-                                "domain": [
-                                    "min",
-                                    "max"
-                                ],
-                                "range": [
-                                    "#e6959c",
-                                    "#911a24"
-                                ]
-                            },
-                            "title": "type",
-                            "legend": {
-                                "labelFont": "Monaco",
-                                "labelFontSize": 12,
-                                "labelColor": "white",
-                                "titleFont": "Monaco",
-                                "titleFontSize": 14,
-                                "titleColor": "white",
-                                "orient": "left",
-                                "labelLimit": 500
-                            }
-                        },
-                        "size": {
-                            "value": 100
-                        },
-                        "opacity": {
-                            "condition": {
-                                "selection": "type_highlight",
-                                "value": 1
-                            },
-                            "value": 0.2
-                        },
-                        "tooltip": [
-                            {
-                                "field": "Month",
-                                "type": "nominal",
-                                "title": "Month"
-                            },
-                            {
-                                "field": "MonthVAl",
-                                "type": "quantitative",
-                                "title": "Temperature"
-                            }
-                        ]
-                    }
-                }
-            ]
-        }
+      
     ],
     "resolve": {
         "scale": {
